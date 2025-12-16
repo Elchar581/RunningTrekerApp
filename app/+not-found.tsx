@@ -1,5 +1,5 @@
 import { Link, Stack } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Text, View } from '@/components/Themed';
 
@@ -10,9 +10,19 @@ export default function NotFoundScreen() {
       <View style={styles.container}>
         <Text style={styles.title}>This screen doesn't exist.</Text>
 
-        <Link href="/" style={styles.link}>
-          <Text style={styles.linkText}>Go to home screen!</Text>
-        </Link>
+        {Platform.OS === 'web' ? (
+          <View style={styles.link}>
+            <Link href="/" asChild>
+              <TouchableOpacity>
+                <Text style={styles.linkText}>Go to home screen!</Text>
+              </TouchableOpacity>
+            </Link>
+          </View>
+        ) : (
+          <Link href="/" style={styles.link}>
+            <Text style={styles.linkText}>Go to home screen!</Text>
+          </Link>
+        )}
       </View>
     </>
   );
