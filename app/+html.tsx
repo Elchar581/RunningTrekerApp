@@ -36,4 +36,9 @@ body {
   body {
     background-color: #000;
   }
+}
+/* Исправление для Link компонентов на веб-платформе */
+a {
+  text-decoration: none;
+  color: inherit;
 }`;
