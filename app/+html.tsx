@@ -37,7 +37,7 @@ body {
     background-color: #000;
   }
 }
-/* Исправление для Link компонентов на веб-платформе */
+/* Fix for Link components on web platform */
 a {
   text-decoration: none;
   color: inherit;
